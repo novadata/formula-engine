@@ -1,0 +1,110 @@
+#Date Functions
+today.remark=当前日期. 当format为null或\"\"时，使用默认格式:yyyyMMdd
+today.example=today():20150119, today('yyyy-MM-dd'): 2015-01-19
+now.remark=返回当前日期和时间. 当format为null或""时，默认为yyyyMMdd  hh:mm:ss格式
+now.example=now():20150119 12:11:10
+
+#Type Conversion Functions
+datetime.remark=将text自动转换为日期时间串. 当pattern为null或""时，自动识别日期时间；否则，使用regex格式串来识别日期时间
+datetime.example=datetime('时间 2015年5月14日15:30'):'20150514 15:30:00'
+date.remark=将text自动转换为日期串. 当pattern为null或""时，自动识别日期；否则，使用regex格式串来识别日期
+date.example=datetime('时间 2015年5月14日15:30'):'20150514'
+str.remark=将对象转换为字符串.如果对象是Date类型，则按照format的格式转换为字符串
+str.example=str(12):'12',str(datetime('时间 2015年5月14日15:30'),'yyyy-mm-dd'): 2015-05-14
+int.remark=将字符串自动转换为整数
+int.example=int('数量:100'):100
+float.remark=将字符串自动转换为小数
+float.example=float('价格：123.45元'):123.45
+
+#String Functions
+
+charat.remark=返回指定索引位置处的字符.索引从0开始
+charat.example=charAt('novadata',0):n
+charcodeat.remark=返回在指定的位置的字符的 Unicode 编码
+charcodeat.example=charCodeAt('Hello world!',1):101
+concat.remark=连接两个或三个字符串
+concat.example=concat("Hello ","world"," novadata"):Hello world novadata
+fromcharcode.remark=从一个字符的Unicode编码值创建一个字符串
+fromcharcode.example=fromCharCode(72):H
+indexof.remark=从字符串中某个位置开始检索子串,返回子串在字符串中首次出现的位置
+indexof.example=indexOf("Hello world!","Hello"):0, indexOf("Hello world!",world,1):6
+lastindexof.remark=从字符串中某个位置从后向前搜索字符串,返回子串在字符串中首次出现的位置
+lastindexof.example=lastIndexOf("Hello world!","Hello"):0, lastIndexOf("Hello world!","world"):6
+left.remark=返回从指定字符串开头提取的子串
+left.example=left('nova',2):'no'
+len.remark=返回给定字符串的长度
+len.example=len('nova'):4
+right.remark=返回从指定字符串尾部提取的子串
+right.example=right('nova',2):'va'
+mid.remark=返回指定字符串中的子串
+mid.example=mid('nova data',1,3):'ova'
+regexextract.remark=按照正则表达式提取匹配的第一个子串
+regexextract.example=regexExtract('Nova data 101','[0-9]+'):101
+regexmatch.remark=找到一个或多个正则表达式的匹配,存放匹配结果的数组
+regexmatch.example=match("1 plus 2 equal 3","/\\d+/g"):true
+regexreplace.remark=替换与正则表达式匹配的子串
+regexreplace.example=regexReplace("novadata 101","[0-9]+","888"):"novadata 888"
+replace.remark=将文本字符串的一部分替换为其他文本字符串
+replace.example=replace('nova data','nova','hello'):'hello data'
+split.remark=把字符串分割为字符串数组
+split.example=split("1,2,3", ","):['1','2','3']
+substr.remark=提取字符串中两个指定的索引号之间的字符
+substr.example=substring("Hello world!",3):'lo world!', substring("Hello world!",3,7):'lo w'
+tolowercase.remark=把字符串转换为小写,使用给定语言或者默认语言环境的规则
+tolowercase.example=toLowerCase('HE'):'he',toLowerCase("TITLE") 在 Turkish（土耳其语）语言环境中返回 "t?tle".其中“?”是 LATIN SMALL LETTER DOTLESS I 字符
+touppercase.remark=把字符串转换为大写,使用给定语言或者默认语言环境的规则
+touppercase.example=toUpperCase('title'):'HE',toUpperCase('s','tr'):在 Turkish（土耳其语）语言环境中,小写字母 sharp s -> 两个字母：SS
+#Math Functions
+abs.remark=返回绝对值
+abs.example=abs(-1.2):1.2
+acos.remark=返回一个值的反余弦；返回的角度范围在 0.0 到 pi 之间
+acos.example=acos(-1):pi
+asin.remark= 返回一个值的反正弦；返回的角度范围在 -pi/2 到 pi/2 之间
+asin.example=asin(1):0
+atan.remark=返回一个值的反正切；返回的角度范围在 -pi/2 到 pi/2 之间
+atan.example=atan(0.50):0.4636476090008061
+ceil.remark=返回最小的（最接近负无穷大）double 值，该值大于等于参数，并等于某个整数
+ceil.example=ceil(0.6):1,ceil(0.4):1,ceil(-5.1):-5
+cos.remark=返回角的三角余弦
+cosh.remark=返回 double 值的双曲线余弦
+exp.remark=返回欧拉数 e 的 double 次幂的值
+floor.remark=返回最大的（最接近正无穷大）double 值，该值小于等于参数，并等于某个整数
+floor.example=ceil(0.6):0,ceil(1.4):1,ceil(-5.1):-6
+log.remark=返回 double 值的自然对数（底数是 e）
+log10.remark=返回 double 值的底数为 10 的对数
+max.remark=返回两个值中较大的一个
+min.remark=返回两个值中较小的一个
+pow.remark=返回第一个参数的第二个参数次幂的值
+pow.example=pow(2,3):8
+random.remark=返回 0 到 1.0 之间的随机数
+random.example=random():0.9370844220218102
+round.remark=把数四舍五入为最接近的整数
+round.example=round(0.6):1,round(0.5):1,round(0.49):0
+sin.remark=返回一个数字的正弦,返回值在 -1.0 到 1.0 之间
+sin.example=sin(3):0.1411200080598672
+sqrt.remark=返回数的平方根
+tan.remark=返回角的正切
+
+#Logic Functions
+iif.remark=当逻辑表达式的值为 TRUE 时返回一个值truePart，而当其为 FALSE 时返回另一个值falsePart
+iif.example=iif(1==2,'yes','no'):no
+
+#Html Functions
+attr.remark=返回第一个元素某属性的值
+attr.example=attr('<div name=divname></div>','name'):divname
+tagname.remark=返回第一个元素的Tag名称
+tagname.example=tagName('<div></div><span>span</span>'):div
+innerhtml.remark=返回第一个元素中的HTML内容
+innerhtml.example=innerhtml('<div><a>a</a>div text</div><span>span</span>':<a>a</a>div text
+text.remark=返回第一个元素自身及其下级节点的文本内容
+text.example=text('<div><a>aa</a>div text</div><span>span</span>'):aadiv text
+owntext.remark=返回第一个元素自身的文本内容
+owntext.example=ownText('<div><a>a</a>div text</div><span>span</span>'):div text
+child.remark=返回第一个元素的第index个儿子节点,index从0开始
+child.example=child('<div><a>a</a><span>span</span>div text</div><span>span</span>',0):<a>a</a>
+sibling.remark=返回第一个元素的第index个同级元素,index从0开始
+sibling.example=sibling('<div><a>a</a>div text</div><span>span</span>',1): <span>span</span>
+queryselector.remark=返回匹配选择器的第一个元素
+queryselector.example=querySeletor('<div><a>a1</a><a>a2</a><span>span</span>div text</div>','a'):<a>a1</a>
+queryselectorall.remark=返回匹配选择器的所有元素
+queryselectorall.example=querySeletorAll('<div><a>a</a><span>span1</span>div text</div><span>span2</span>','span'):<span>span1</span>\n<span>span2</span>

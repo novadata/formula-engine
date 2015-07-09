@@ -1,0 +1,91 @@
+#Date Functions
+today.remark=Current Date. default format:yyyyMMdd when format = null or \"\"
+today.example=today():20150119, today('yyyy-MM-dd'): 2015-01-19
+now.remark=Returns the current date and time .default format:yyyyMMdd  hh:mm:ss
+now.example=now():20150119 12:11:10
+
+#Type Conversion Functions
+datetime.remark=Convert text to datetime str. When pattern is null or "",auto scrape datetime；otherwise，scrape datetime using regex
+datetime.example=datetime('Date: 2015-5-14 15:30'):Date('20150514 15:30')
+date.remark=Convert text to date str. When pattern is null or "",auto scrape date；otherwise，scrape date using regex
+date.example=datetime('Date 2015-5月14-15:30'):'20150514'
+str.remark=Convert object to str.If object's type is Date，convert to str using format
+str.example=str(12):'12',str(datetime('Date 2015年5-14-15:30'),'yyyy-mm-dd'): 2015-05-14
+int.remark=Convert string to int
+int.example=int('123'):123
+float.remark=Convert string to float
+float.example=float('123.45'):123.45
+
+#String Functions
+
+charAt.remark=Returns the char value at the specified index.
+charAt.example=charAt('novadata',0):n
+charCodeAt.remark=Returns the character (Unicode code point) at the specified index.
+charCodeAt.example=charCodeAt('Hello world!',1):101
+concat.remark=Concatenates the specified string to the end of this string.
+concat.example=concat("Hello ","world"," novadata"):Hello world novadata
+fromCharCode.remark=Create string from Unicode  code point
+fromCharCode.example=fromCharCode(72):H
+indexOf.remark=Returns the index within this string of the first occurrence of the specified character.
+indexOf.example=indexOf("Hello world!","Hello"):0, indexOf("Hello world!",world,1):6
+lastIndexOf.remark=Returns the index within this string of the last occurrence of the specified character.
+lastIndexOf.example=lastIndexOf("Hello world!","Hello"):0, lastIndexOf("Hello world!","world"):6
+left.remark=Returns a substring from the beginning of a specified string.
+left.example=left('nova',2):'no'
+len.remark=Returns the length of this string.
+len.example=len('nova'):4
+right.remark=Returns a substring from the end of a specified string.
+right.example=right('nova',2):'va'
+mid.remark=Returns a segment of a string.
+mid.example=mid('nova data',1,3):'ova'
+regexExtract.remark=Extracts matching substrings according to a regular expression.
+regexExtract.example=regexExtract('Nova data 101','[0-9]+'):101
+regexMatch.remark=Whether a piece of text matches a regular expression.
+regexMatch.example=match("1 plus 2 equal 3","/\\d+/g"):true
+regexReplace.remark=Replaces part of a text string with a different text string using regular expressions.
+regexReplace.example=regexReplace("novadata 101","[0-9]+","888"):"novadata 888"
+replace.remark=Replaces part of a text string with a different text string.
+replace.example=replace('nova data','nova','hello'):'hello data'
+split.remark=Splits this string around matches of the given regular expression.
+split.example=split("1,2,3", ","):['1','2','3']
+substr.remark=Returns a new string that is a substring of this string.
+substr.example=substring("Hello world!",3):'lo world!', substring("Hello world!",3,7):'lo w'
+toLowerCase.remark= Converts all of the characters in this String to lower case using the rules of the default locale.
+toLowerCase.example=toLowerCase('HE'):'he',toLowerCase("TITLE")  in a Turkish locale returns "t\u0131tle", where '\u0131' is the LATIN SMALL LETTER DOTLESS I character.
+toUpperCase.remark=Converts all of the characters in this String to upper case using the rules of the default locale.
+toUpperCase.example=toUpperCase('he'):'HE',toUpperCase('title','tr'):in a Turkish locale returns "T\u0130TLE", where '\u0130' is the LATIN CAPITAL LETTER I WITH DOT ABOVE character.
+#Math Functions ,deprecated
+abs.remark=Returns the absolute value of a value.
+abs.example=abs(-1.2):1.2
+acos.remark=返回一个值的反余弦；返回的角度范围在 0.0 到 pi 之间
+acos.example=acos(-1):pi
+asin.remark= 返回一个值的反正弦；返回的角度范围在 -pi/2 到 pi/2 之间
+asin.example=asin(1):0
+atan.remark=返回一个值的反正切；返回的角度范围在 -pi/2 到 pi/2 之间
+atan.example=atan(0.50):0.4636476090008061
+ceil.remark=返回最小的（最接近负无穷大）double 值，该值大于等于参数，并等于某个整数
+ceil.example=ceil(0.6):1,ceil(0.4):1,ceil(-5.1):-5
+cos.remark=返回角的三角余弦
+cosh.remark=返回 double 值的双曲线余弦
+exp.remark=返回欧拉数 e 的 double 次幂的值
+floor.remark=返回最大的（最接近正无穷大）double 值，该值小于等于参数，并等于某个整数
+floor.example=ceil(0.6):0,ceil(1.4):1,ceil(-5.1):-6
+log.remark=返回 double 值的自然对数（底数是 e）
+log10.remark=返回 double 值的底数为 10 的对数
+max.remark=返回两个值中较大的一个
+min.remark=返回两个值中较小的一个
+pow.remark=返回第一个参数的第二个参数次幂的值
+pow.example=pow(2,3):8
+random.remark=返回 0 到 1.0 之间的随机数
+random.example=random():0.9370844220218102
+round.remark=把数四舍五入为最接近的整数
+round.example=round(0.6):1,round(0.5):1,round(0.49):0
+sin.remark=返回一个数字的正弦,返回值在 -1.0 到 1.0 之间
+sin.example=sin(3):0.1411200080598672
+sqrt.remark=返回数的平方根
+tan.remark=返回角的正切
+
+#Logic Functions
+iif.remark=Returns one value if a logical expression is `TRUE` and another if it is `FALSE`.
+iif.example=iif(1==2,'yes','no'):no
+
